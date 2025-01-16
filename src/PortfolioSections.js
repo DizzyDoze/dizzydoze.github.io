@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, Github, Linkedin, Mail } from 'lucide-react';
 
 
 const ProjectsContent = () => (
@@ -127,7 +127,7 @@ const ContactsContent = () => {
         setCopied(true);
         setTimeout(() => {
             setCopied(false);
-        }, 2000); // Reset after 2 seconds
+        }, 2000);
     };
 
     const contacts = [
@@ -136,21 +136,24 @@ const ContactsContent = () => {
             value: 'overdosedizzy@gmail.com',
             onClick: handleEmailClick,
             icon: copied ? <Check size={16} /> : <Copy size={16} />,
-            isEmail: true
+            isEmail: true,
+            logo: <Mail size={20} className="inline-block ml-2 mb-1" />
         },
         {
             type: 'GitHub',
             value: 'github.com/DizzyDoze',
             link: 'https://github.com/DizzyDoze',
             icon: "→",
-            isEmail: false
+            isEmail: false,
+            logo: <Github size={20} className="inline-block ml-2 mb-1" />
         },
         {
             type: 'LinkedIn',
             value: 'linkedin.com/in/yj-pro',
             link: 'https://www.linkedin.com/in/yj-pro',
             icon: "→",
-            isEmail: false
+            isEmail: false,
+            logo: <Linkedin size={20} className="inline-block ml-2 mb-1" />
         }
     ];
 
@@ -167,8 +170,13 @@ const ContactsContent = () => {
                 >
                     <div className="flex items-center">
                         <div className="flex-grow">
-                            <div className="text-yellow-400 text-lg font-mono">{contact.type}</div>
-                            <div className="text-green-400 text-base group-hover:text-yellow-400">{contact.value}</div>
+                            <div className="text-yellow-400 text-lg font-mono">
+                                {contact.type}
+                                {contact.logo}
+                            </div>
+                            <div className="text-green-400 text-base group-hover:text-yellow-400">
+                                {contact.value}
+                            </div>
                         </div>
                         <span className="text-yellow-400 font-mono">
                             {contact.icon}
@@ -179,7 +187,6 @@ const ContactsContent = () => {
         </div>
     );
 };
-
 
 export const sectionContents = {
     Projects: ProjectsContent,
