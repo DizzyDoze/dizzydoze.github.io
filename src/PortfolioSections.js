@@ -74,7 +74,7 @@ const ExperienceContent = () => (
                 <p className="text-yellow-400 text-sm">{`${job.role} (${job.period})`}</p>
                 <ul className="list-disc list-inside mt-2 body-font font-bold">
                     {job.duties.map((duty, i) => (
-                        <li key={i} className="text-green-400 text-base">{duty}</li>
+                        <li key={i} className="text-green-400 body-font">{duty}</li>
                     ))}
                 </ul>
             </div>
@@ -159,31 +159,49 @@ const ContactsContent = () => {
 
     return (
         <div className="space-y-4">
-            {contacts.map((contact, index) => (
-                <a
-                    key={index}
-                    href={contact.isEmail ? "#" : contact.link}
-                    onClick={contact.isEmail ? contact.onClick : undefined}
-                    target={contact.isEmail ? undefined : "_blank"}
-                    rel={contact.isEmail ? undefined : "noopener noreferrer"}
-                    className="block p-4 border border-green-400 rounded hover:bg-green-900 transition-colors group cursor-pointer"
-                >
-                    <div className="flex items-center">
-                        <div className="flex-grow">
-                            <div className="text-yellow-400 text-lg">
-                                {contact.type}
-                                {contact.logo}
+            {contacts.map((contact, index) =>
+                contact.isEmail ? (
+                    <button
+                        key={index}
+                        onClick={contact.onClick}
+                        className="block p-4 border border-green-400 rounded hover:bg-green-900 transition-colors group cursor-pointer w-full text-left"
+                    >
+                        <div className="flex items-center">
+                            <div className="flex-grow">
+                                <div className="text-yellow-400 text-lg">
+                                    {contact.type}
+                                    {contact.logo}
+                                </div>
+                                <div className="text-green-400 text-base group-hover:text-yellow-400 body-font font-bold">
+                                    {contact.value}
+                                </div>
                             </div>
-                            <div className="text-green-400 text-base group-hover:text-yellow-400 body-font font-bold">
-                                {contact.value}
-                            </div>
+                            <span className="text-yellow-400">{contact.icon}</span>
                         </div>
-                        <span className="text-yellow-400">
-                            {contact.icon}
-                        </span>
-                    </div>
-                </a>
-            ))}
+                    </button>
+                ) : (
+                    <a
+                        key={index}
+                        href={contact.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block p-4 border border-green-400 rounded hover:bg-green-900 transition-colors group cursor-pointer"
+                    >
+                        <div className="flex items-center">
+                            <div className="flex-grow">
+                                <div className="text-yellow-400 text-lg">
+                                    {contact.type}
+                                    {contact.logo}
+                                </div>
+                                <div className="text-green-400 text-base group-hover:text-yellow-400 body-font font-bold">
+                                    {contact.value}
+                                </div>
+                            </div>
+                            <span className="text-yellow-400">{contact.icon}</span>
+                        </div>
+                    </a>
+                )
+            )}
         </div>
     );
 };

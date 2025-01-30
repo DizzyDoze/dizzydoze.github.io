@@ -16,7 +16,7 @@ body {
 
 .font-custom {
   font-family: 'Press Start 2P', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .body-font {
@@ -25,10 +25,18 @@ body {
   sans-serif;;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 18px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.pixel-button img {
+  width: 30px;  /* Adjust to desired size */
+  height: 30px; /* Adjust to match width */
+  image-rendering: pixelated; /* Ensures it retains the pixelated look */
+}
+
 
