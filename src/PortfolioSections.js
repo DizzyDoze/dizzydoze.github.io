@@ -5,20 +5,20 @@ import { Copy, Check, Github, Linkedin, Mail } from 'lucide-react';
 const ProjectsContent = () => (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="p-4 border border-green-400 rounded hover:bg-green-900 transition-colors group">
-            <h2 className="text-yellow-400 text-lg font-mono">Deep Learning Model Showcase</h2>
-            <p className="text-green-400 text-base">A platform to demonstrate and visualize trained deep learning models for various applications.</p>
+            <h2 className="text-yellow-400 text-lg">Deep Learning Model Showcase</h2>
+            <p className="text-green-400 text-base body-font font-bold">A platform to demonstrate and visualize trained deep learning models for various applications.</p>
             <p className="text-yellow-400 text-base">Coming soon...</p>
         </div>
         <div className="p-4 border border-green-400 rounded hover:bg-green-900 transition-colors group">
-            <h2 className="text-yellow-400 text-lg font-mono">Quadcopter Drone Build</h2>
-            <p className="text-green-400 text-base">A personal project involving design, assembly, and software
+            <h2 className="text-yellow-400 text-lg">Quadcopter Drone Build</h2>
+            <p className="text-green-400 text-base body-font font-bold">A personal project involving design, assembly, and software
                 integration for drone functionality.</p>
             <p className="text-yellow-400 text-base">Coming soon...</p>
 
         </div>
         <div className="p-4 border border-green-400 rounded hover:bg-green-900 transition-colors group">
-            <h2 className="text-yellow-400 text-lg font-mono">Financial Data Filtering App</h2>
-            <p className="text-green-400 text-base">An application to filter and analyze financial data using Flask,
+            <h2 className="text-yellow-400 text-lg ">Financial Data Filtering App</h2>
+            <p className="text-green-400 text-base body-font font-bold">An application to filter and analyze financial data using Flask,
                 React, and MySQL.</p>
             <p className="text-yellow-400 text-base">Coming soon...</p>
         </div>
@@ -70,9 +70,9 @@ const ExperienceContent = () => (
             }
         ].map((job, index) => (
             <div key={index} className="p-4 border border-green-400 rounded hover:bg-green-900 transition-colors group">
-                <h3 className="text-yellow-400 text-lg font-mono">{job.company}</h3>
-                <p className="text-yellow-400 text-base">{`${job.role} (${job.period})`}</p>
-                <ul className="list-disc list-inside mt-2">
+                <h3 className="text-yellow-400 text-lg">{job.company}</h3>
+                <p className="text-yellow-400 text-sm">{`${job.role} (${job.period})`}</p>
+                <ul className="list-disc list-inside mt-2 body-font font-bold">
                     {job.duties.map((duty, i) => (
                         <li key={i} className="text-green-400 text-base">{duty}</li>
                     ))}
@@ -84,8 +84,8 @@ const ExperienceContent = () => (
 
 const EducationContent = () => (
     <div className="p-4 border border-green-400 rounded hover:bg-green-900 transition-colors group">
-        <div className="text-yellow-400 text-lg font-mono">Aug 2023 – Present</div>
-        <p className="text-green-400 text-base">
+        <div className="text-yellow-400 text-lg">Aug 2023 – Present</div>
+        <p className="text-green-400 body-font font-bold">
             M.S. in Computer Science, University of San Francisco
         </p>
     </div>
@@ -107,8 +107,8 @@ const SkillsContent = () => {
                     className="p-4 border border-green-400 rounded hover:bg-green-900 transition-colors group"
                 >
                     <div>
-                        <div className="text-yellow-400 text-lg font-mono">{item.category}</div>
-                        <div className="text-green-400 text-base group-hover:text-yellow-400">{item.skills}</div>
+                        <div className="text-yellow-400 text-lg">{item.category}</div>
+                        <div className="text-green-400 group-hover:text-yellow-400 body-font font-bold">{item.skills}</div>
                     </div>
                 </div>
             ))}
@@ -137,7 +137,7 @@ const ContactsContent = () => {
             onClick: handleEmailClick,
             icon: copied ? <Check size={16} /> : <Copy size={16} />,
             isEmail: true,
-            logo: <Mail size={20} className="inline-block ml-2 mb-1" />
+            logo: <Mail size={29} className="inline-block ml-2 mb-1" />
         },
         {
             type: 'GitHub',
@@ -145,7 +145,7 @@ const ContactsContent = () => {
             link: 'https://github.com/DizzyDoze',
             icon: "→",
             isEmail: false,
-            logo: <Github size={20} className="inline-block ml-2 mb-1" />
+            logo: <Github size={29} className="inline-block ml-2 mb-1" />
         },
         {
             type: 'LinkedIn',
@@ -153,7 +153,7 @@ const ContactsContent = () => {
             link: 'https://www.linkedin.com/in/yj-pro',
             icon: "→",
             isEmail: false,
-            logo: <Linkedin size={20} className="inline-block ml-2 mb-1" />
+            logo: <Linkedin size={29} className="inline-block ml-2 mb-1" />
         }
     ];
 
@@ -170,15 +170,15 @@ const ContactsContent = () => {
                 >
                     <div className="flex items-center">
                         <div className="flex-grow">
-                            <div className="text-yellow-400 text-lg font-mono">
+                            <div className="text-yellow-400 text-lg">
                                 {contact.type}
                                 {contact.logo}
                             </div>
-                            <div className="text-green-400 text-base group-hover:text-yellow-400">
+                            <div className="text-green-400 text-base group-hover:text-yellow-400 body-font font-bold">
                                 {contact.value}
                             </div>
                         </div>
-                        <span className="text-yellow-400 font-mono">
+                        <span className="text-yellow-400">
                             {contact.icon}
                         </span>
                     </div>

@@ -4,12 +4,12 @@ const Section = ({ title, children, defaultOpen = false }) => {
     const [isVisible, setIsVisible] = useState(defaultOpen);
 
     return (
-        <div className="w-full mb-8">
+        <div className="w-full mb-8 font-custom">
             <button
                 onClick={() => setIsVisible(!isVisible)}
                 className="w-full text-center p-4 transition-all duration-300 hover:scale-105 focus:outline-none group"
             >
-                <h2 className="text-2xl text-yellow-400 font-bold tracking-wide leading-tight inline-flex items-center gap-2">
+                <h2 className="text-2xl font-custom text-yellow-400 font-bold tracking-wide leading-tight inline-flex items-center gap-2">
                     <span className="text-green-400 opacity-70 group-hover:opacity-100">[</span>
                     {title}
                     <span className="text-green-400 opacity-70 group-hover:opacity-100">]</span>
@@ -17,7 +17,7 @@ const Section = ({ title, children, defaultOpen = false }) => {
             </button>
 
             {isVisible && (
-                <div className="mt-4 animate-fadeIn">
+                <div className="mt-4 font-custom animate-fadeIn">
                     {children}
                 </div>
             )}
